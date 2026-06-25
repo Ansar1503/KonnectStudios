@@ -1,4 +1,6 @@
-export const ClinetData = [
+import type { Booking } from "@/types/types";
+
+export const ClinetData:Booking[] = [
     {
         "id": 1, "clientName": "Mia Chen", "sessionType": "Podcast Recording",
         "date": "2026-07-02", "status": "confirmed"
