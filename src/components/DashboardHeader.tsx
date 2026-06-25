@@ -6,7 +6,7 @@ function DashboardHeader() {
             <h1 className="text-4xl font-bold">Konnect Studios</h1>
             <p className="text-lg">Manage and track studio bookings</p>
         </div>
-        <button className="bg-black text-white px-6 py-2 font-semibold cursor-pointer rounded hover:bg-gray-500">+ New Booking</button>
+        <button className="bg-black text-white px-6 py-2 font-semibold cursor-pointer rounded-xl hover:bg-gray-500">+ New Booking</button>
     </div>
 
   )
