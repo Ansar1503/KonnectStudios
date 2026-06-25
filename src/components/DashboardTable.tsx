@@ -39,9 +39,9 @@ function DashboardTable({ bookings, setBookings }: DashboardTableProps) {
               </td>
             </tr>
           ) : (
-            bookings.map((booking, index) => (
+            bookings.map((booking) => (
               <tr key={booking.id} className="hover:bg-neutral-800/50 transition-colors">
-                <td className="p-4 font-medium text-neutral-500">{index + 1}</td>
+              <td className="p-4 font-medium text-neutral-500">{booking.id}</td>
                 <td className="p-4 font-semibold text-neutral-100">{booking.clientName}</td>
                 <td className="p-4 text-neutral-400">{booking.sessionType}</td>
                 <td className="p-4 text-neutral-400">{booking.date}</td>

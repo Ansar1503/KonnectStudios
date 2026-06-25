@@ -26,7 +26,7 @@ function DashboardFilters({
       <div className="w-full md:w-1/3 relative">
         <input
           type="text"
-          placeholder="Search reviews, users, or reasons..."
+          placeholder="Search users..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           className="w-full bg-neutral-800 text-neutral-200 placeholder-neutral-500 border border-neutral-700 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-neutral-500"
