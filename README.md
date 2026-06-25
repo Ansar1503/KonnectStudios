@@ -1,75 +1,56 @@
-# React + TypeScript + Vite
+# Studio Bookings Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A lightweight, dark-mode administrative dashboard designed for tracking and managing booking requests at **Konnect Studios**. Built with React, TypeScript, and Tailwind CSS.
 
-Currently, two official plugins are available:
+## 🏗️ Project Architecture & Structure
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```text
+src/
+├── assets/
+│   └── data/
+│       └── data.ts          # Mock initial booking records
+├── components/
+│   ├── DashboardHeader.tsx   # Top application bar & primary CTA trigger
+│   ├── DashboardFilters.tsx  # Pure control inputs for tracking filters
+│   ├── DashboardTable.tsx    # Rows display rendering panel
+│   ├── BookingModal.tsx      # Validation form for creating bookings
+│   └── StatusBadge.tsx       # Domain specific pill components
+├── types/
+│   └── types.ts             # Strict type declarations (Booking, BookingStatus)
+├── App.tsx                  # Core engine, state coordination & processing
+└── main.tsx                 # Application entry mount point
 
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## ⚖️ Trade-offs & Decisions Under Time Constraints
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Given the time constraints, several deliberate trade-offs were made to prioritize core features and deliver a functional UI:
+
+### 1. Client-Side Data Execution vs. Server Synchronization
+
+* **Trade-off:** Unable to integrate calenderly as mentioned in the task as additional.
+* **Reasoning:** Unfamiliarity with calanderly and need for researching about it made me delebrately take the desition to exclude this feature.
+
+### 2. Add dark light them toggle.
+
+* **Trade-off:** Unable to add dsrk light theme toggle. 
+* **Reasoning:** UI was unimportant for this task, even though I invested some amount of time for styling and due to time constraints I was not able to include the toggle feature.
+
+
+---
+
+## 🚀 Getting Started
+
+1. Install required development node dependencies:
+```bash
+pnpm install
+
+```
+
+
+2. Start the local Vite development instance compiler:
+```bash
+pnpm run dev
 
 ```
